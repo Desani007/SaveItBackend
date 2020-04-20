@@ -32,7 +32,7 @@ public class CategoryController {
         return new ResponseEntity<>(service.findall(),HttpStatus.OK);
     }
 
-    @DeleteMapping("/cateegory/{id}")
+    @DeleteMapping("/category/{id}")
     public ResponseEntity deleteCategory(@RequestParam long id){
         service.deleteCategory(id);
         return new ResponseEntity(HttpStatus.OK);

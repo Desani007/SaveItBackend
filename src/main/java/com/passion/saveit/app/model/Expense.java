@@ -14,13 +14,15 @@ import java.time.Instant;
 @AllArgsConstructor
 public class Expense {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
     private long id;
     private  String description;
     private Instant datePurchased;
+    private String location;
     @ManyToOne(cascade = CascadeType.ALL)
     private Category category;
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
 
